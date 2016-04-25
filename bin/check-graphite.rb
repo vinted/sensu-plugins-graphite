@@ -265,7 +265,7 @@ class Graphite < Sensu::Plugin::Check::CLI
     last_values = {}
     if last_metrics
       last_metrics.each do |target_name, metrics|
-        last_values[target_name] = metrics.map { |metric|  metric[0] }.mean
+        last_values[target_name] = metrics.map { |metric| metric[0] }.mean
       end
     end
     last_values
@@ -276,7 +276,7 @@ class Graphite < Sensu::Plugin::Check::CLI
     warnings = []
     if last_time_stamp
       last_time_stamp.each do |target_name, value|
-        last_time_stamp_bool = value[1] > time.to_i ? true : false
+        last_time_stamp_bool = value.first[1] > time.to_i ? true : false
         warnings << "The metric #{target_name} has not been updated in #{updated_since} seconds" unless last_time_stamp_bool
       end
     end

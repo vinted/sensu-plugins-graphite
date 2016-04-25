@@ -6,6 +6,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ## [Unreleased]
 - nothing
 
+## [1.0.1] - 2016-04-25
+### Changed
+- Fix NoMethodError: undefined method > for nil:NilClass in bin/check-graphite.rb[279]
+
 ## [1.0.0] - 2016-01-20
 ### Changed
 - Use the whole client name as hostname for graphite measurement
